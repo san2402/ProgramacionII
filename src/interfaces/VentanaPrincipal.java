@@ -5,8 +5,6 @@
  */
 package interfaces;
 
-import javax.swing.JInternalFrame;
-
 /**
  *
  * @author arielp
