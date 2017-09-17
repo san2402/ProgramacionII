@@ -45,22 +45,25 @@ public class TrabajoPractico2 {
         } 
     }
     
-    public void ejercicio4() {
+    public void ejercicio4() throws Exception {
+        System.out.println("Generando una excepcion");
+        throw new Exception("Soy la excepcion");
+    }
+    
+    /**
+     * Excepcion Propia
+     */
+    public void ejercicio5() {
         try {
-            System.out.println("PRimera parte");
+            System.out.println("Primera parte");
             throw new ExcepcionSimpatica("Soy la excepcion");
         }catch(ExcepcionSimpatica e) {
             System.out.println("excepcion" +  e);
         } 
     }
     
-    public void ejercicio5() throws Exception {
-        System.out.println("PRimera parte");
-        throw new Exception("Soy la excepcion");
-    }
-    
     /**
-     * Crear otra excepcion propia y capturarla y mostrar su contenido.
+     * Crear una excepcion propia y capturarla y mostrar su contenido.
      */
     public void ejercicio6() {
         

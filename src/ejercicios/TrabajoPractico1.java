@@ -1,7 +1,11 @@
 package ejercicios;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 /**
- *
+ * Arreglos y Listas
  * @author arielp
  */
 public class TrabajoPractico1 {
@@ -13,15 +17,54 @@ public class TrabajoPractico1 {
         palabras[2] = "una";
         palabras[3] = "frase";
         
-        System.out.println("Forma de Iterar 1");
+        System.out.println("Iterando Arreglos forma 1");
         for (int i = 0; i < palabras.length; i++) {
             System.out.println(palabras[i]);
         }
         System.out.println("\n");
         
-        System.out.println("Forma de Iterar 2");
+        System.out.println("Iterando Arreglos forma 2");
         for (String palabra : palabras) {
             System.out.println(palabra);
         }
+    }
+    
+    public void ejercicio2() {
+        List<String> palabras = new ArrayList();
+        palabras.add("Esto");
+        palabras.add("es");
+        palabras.add("una");
+        palabras.add("frase");
+        
+        System.out.println("Iterando Listas forma 1");
+        for (int i = 0; i < palabras.size(); i++) {
+            System.out.println(palabras.get(i));
+        }
+        System.out.println("\n");
+        
+        System.out.println("Iterando Listas forma 2");
+        for (String palabra : palabras) {
+            System.out.println(palabra);
+        }
+        
+        System.out.println("Iterando Listas forma 3 (Iterador)");
+        Iterator<String> iterador = palabras.iterator();
+        while(iterador.hasNext()) {
+            System.out.println(iterador.next());
+        }
+    }
+    
+    /**
+     * Crear un arreglo de numeros enteros del 1 al 5, recorrerlos y mostralos de las 2 formas
+     */
+    public void ejercicio3() {
+        
+    }
+    
+    /**
+     * Crear una lista de numeros enteros del 1 al 5, recorrerlos y mostarlos de las 3 formas
+     */
+    public void ejercicio4() {
+        
     }
 }
