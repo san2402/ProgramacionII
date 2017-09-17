@@ -24,16 +24,12 @@ public class ListadoClientes extends javax.swing.JInternalFrame {
     public ListadoClientes() {
         initComponents();
         
-        this.rellenarTabla();        
+        this.cargarClientes();        
     }
     
-    public void rellenarTabla() {
-        System.out.println("Metodo rellenar tabla");
-        
-        DefaultTableModel model = (DefaultTableModel) this.tablaClientes.getModel();
-        
-        ConexionesBaseDeDatos conexiones = new ConexionesBaseDeDatos();
-        
+    private void cargarClientes() {        
+        DefaultTableModel model = (DefaultTableModel) this.tablaClientes.getModel();        
+        ConexionesBaseDeDatos conexiones = new ConexionesBaseDeDatos();        
         try {
             List<Cliente> clientes = conexiones.buscarTodosLosClientes();
             for (Cliente cliente : clientes) {

@@ -1,10 +1,5 @@
-
 package modelos;
 
-/**
- *
- * @author arielp
- */
 public class DetallePedido {
     private int cantidad;
 

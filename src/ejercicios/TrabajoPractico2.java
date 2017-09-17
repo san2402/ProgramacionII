@@ -2,6 +2,10 @@ package ejercicios;
 
 import excepciones.ExcepcionSimpatica;
 
+/**
+ * Excepciones
+ * @author arielp
+ */
 public class TrabajoPractico2 {
 
     public void ejercicio1() {

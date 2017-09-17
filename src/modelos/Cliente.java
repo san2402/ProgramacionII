@@ -1,9 +1,5 @@
 package modelos;
 
-/**
- *
- * @author arielp
- */
 public class Cliente extends Persona {
     private String cuit;
     private String tipo;

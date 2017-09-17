@@ -1,9 +1,5 @@
 package modelos;
 
-/**
- *
- * @author arielp
- */
 public class Pedido {
     private int id;
     private int numeroPedido;

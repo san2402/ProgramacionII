@@ -7,16 +7,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import modelos.Cliente;
 import modelos.Mercaderia;
 import modelos.Pedido;
 
-/**
- *
- * @author arielp
- */
 public class ConexionesBaseDeDatos {
 
     public Connection getConexionMysql() {
@@ -80,7 +74,6 @@ public class ConexionesBaseDeDatos {
 
     public void insertarPedido(Pedido pedido) {
         Connection conexion = this.getConexionMysql();
-        // INSERT INTO pedidos VALUES (1, 8)
 
         String insert = "INSERT INTO pedidos VALUES (" + pedido.getId() + ", " + pedido.getNumeroPedido() + ")";
 
@@ -131,7 +124,7 @@ public class ConexionesBaseDeDatos {
             }
             rs.close();
         } catch (SQLException ex) {
-            System.out.println("Hubo un error al escribir datos" + ex.getMessage());
+            System.out.println("Hubo un error al leer datos" + ex.getMessage());
         }
 
         return cliente;
@@ -152,7 +145,7 @@ public class ConexionesBaseDeDatos {
             }
             rs.close();
         } catch (SQLException ex) {
-            System.out.println("Hubo un error al escribir datos" + ex.getMessage());
+            System.out.println("Hubo un error al leer datos" + ex.getMessage());
         }
 
         return mercaderia;
@@ -179,7 +172,7 @@ public class ConexionesBaseDeDatos {
                 mercaderias.add(mercaderia);
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ConexionesBaseDeDatos.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Hubo un error al leer datos de mercaderia" + ex.getMessage());
         }
         
         return mercaderias;

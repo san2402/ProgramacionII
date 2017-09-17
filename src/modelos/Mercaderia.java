@@ -1,9 +1,5 @@
 package modelos;
 
-/**
- *
- * @author arielp
- */
 public class Mercaderia {
     private String codigo;
     private String nombre;

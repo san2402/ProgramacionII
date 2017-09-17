@@ -19,10 +19,10 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
     public ListadoMercaderias() {
         initComponents();
         
-        this.cargarClientes();
+        this.cargarMercaderias();
     }
     
-    public void cargarClientes() {
+    private void cargarMercaderias() {
         DefaultTableModel model = (DefaultTableModel) this.tablaClientes.getModel();
         model.addRow(new Object[]{"Column 1", "Column 2", "Column 3", "Column 3"});
     }
