@@ -19,7 +19,8 @@ public class TrabajoPractico1 {
         
         System.out.println("Iterando Arreglos forma 1");
         for (int i = 0; i < palabras.length; i++) {
-            System.out.println(palabras[i]);
+            String palabra = palabras[i];
+            System.out.println(palabra);
         }
         System.out.println("\n");
         
@@ -38,7 +39,8 @@ public class TrabajoPractico1 {
         
         System.out.println("Iterando Listas forma 1");
         for (int i = 0; i < palabras.size(); i++) {
-            System.out.println(palabras.get(i));
+            String palabra = palabras.get(i);
+            System.out.println(palabra);
         }
         System.out.println("\n");
         

@@ -75,7 +75,7 @@ public class ConexionesBaseDeDatos {
     public void insertarPedido(Pedido pedido) {
         Connection conexion = this.getConexionMysql();
 
-        String insert = "INSERT INTO pedidos VALUES (" + pedido.getId() + ", " + pedido.getNumeroPedido() + ")";
+        String insert = "INSERT INTO pedidos VALUES (" + pedido.getNumeroPedido() + ", " + pedido.getNumeroPedido() + ")";
 
         try {
             Statement st = conexion.createStatement();

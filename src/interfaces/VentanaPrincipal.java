@@ -5,6 +5,10 @@
  */
 package interfaces;
 
+import java.beans.PropertyVetoException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author arielp
@@ -16,7 +20,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
-        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH); 
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -34,6 +38,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuItemNuevoCliente = new javax.swing.JMenuItem();
         itemVerMercaderias = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        menuItemNuevaMercaderia = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,6 +72,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         itemVerMercaderias.add(jMenuItem2);
 
+        menuItemNuevaMercaderia.setText("Nueva Mercaderia");
+        menuItemNuevaMercaderia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemNuevaMercaderiaActionPerformed(evt);
+            }
+        });
+        itemVerMercaderias.add(menuItemNuevaMercaderia);
+
         jMenuBar1.add(itemVerMercaderias);
 
         setJMenuBar(jMenuBar1);
@@ -79,7 +92,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 278, Short.MAX_VALUE)
+            .addGap(0, 292, Short.MAX_VALUE)
         );
 
         pack();
@@ -90,26 +103,50 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ListadoClientes listadoClientes = new ListadoClientes();
         listadoClientes.setBounds(10, 10, 600, 600);
         listadoClientes.setVisible(true);
-        
+
         this.add(listadoClientes);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void itemVerMercaderiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemVerMercaderiasActionPerformed
-        System.out.println("Click en item ver todos");
-        ListadoMercaderias listado = new ListadoMercaderias();
-        listado.setBounds(10, 10, 500, 500);
-        listado.setVisible(true);
-        
-        this.add(listado);
+
+        this.listadoMercaderias = new ListadoMercaderias();
+        listadoMercaderias.setBounds(10, 10, 500, 500);
+        listadoMercaderias.setVisible(true);
+
+        this.add(listadoMercaderias);
+
+        try {
+            this.nuevoCliente.setClosed(true);
+        } catch (PropertyVetoException ex) {
+
+        }
     }//GEN-LAST:event_itemVerMercaderiasActionPerformed
 
     private void menuItemNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNuevoClienteActionPerformed
-        NuevaMercaderia pantallaNuevaMercaderia = new NuevaMercaderia();
-        pantallaNuevaMercaderia.setBounds(10, 10, 500, 500);
-        pantallaNuevaMercaderia.setVisible(true);
-        
-        this.add(pantallaNuevaMercaderia);
+        if (this.nuevoCliente == null) {
+            nuevoCliente = new NuevoCliente();
+            nuevoCliente.setBounds(10, 10, 500, 500);
+            
+        }
+        nuevoCliente.setVisible(true);
+
+        this.add(nuevoCliente);
     }//GEN-LAST:event_menuItemNuevoClienteActionPerformed
+
+    private void menuItemNuevaMercaderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNuevaMercaderiaActionPerformed
+        if (this.nuevoCliente == null) {
+            this.nuevoCliente = new NuevoCliente();
+            nuevoCliente.setBounds(10, 10, 400, 500);
+            this.add(nuevoCliente);
+            nuevoCliente.setVisible(true);
+        }
+
+//        NuevaMercaderia nuevaMercaderia = new NuevaMercaderia();
+//        nuevaMercaderia.setBounds(10, 10, 400, 500);
+//        this.add(nuevaMercaderia);
+//        nuevaMercaderia.setVisible(true);
+
+    }//GEN-LAST:event_menuItemNuevaMercaderiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +189,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem menuItemNuevaMercaderia;
     private javax.swing.JMenuItem menuItemNuevoCliente;
     // End of variables declaration//GEN-END:variables
+
+    private NuevoCliente nuevoCliente;
+    private ListadoMercaderias listadoMercaderias;
 }
