@@ -53,7 +53,7 @@ public class TrabajoPractico5 {
         ventanaPrincipal.setTitle("Ejercicio 3");
         ventanaPrincipal.setLayout(null);
         
-        JInternalFrame ventanaInterna = new JInternalFrame();
+        final JInternalFrame ventanaInterna = new JInternalFrame();
         ventanaInterna.setBounds(0, 0, 200, 200);
         ventanaInterna.setTitle("Ventana Interna");
         ventanaInterna.setBackground(Color.BLUE);
@@ -61,7 +61,7 @@ public class TrabajoPractico5 {
         ventanaPrincipal.add(ventanaInterna);
         ventanaInterna.setVisible(true);
         
-        JInternalFrame ventanaInterna2 = new JInternalFrame();        
+        final JInternalFrame ventanaInterna2 = new JInternalFrame();        
         ventanaInterna2.setBounds(0, 200, 200, 200);
         ventanaInterna2.setTitle("Ventana Interna 2");
         ventanaInterna2.setBackground(Color.GREEN);
